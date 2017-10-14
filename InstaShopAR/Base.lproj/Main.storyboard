@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ItV-RE-UY2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Insta Shop-->
+        <scene sceneID="vEr-iE-eXH">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="QxM-CU-AAb" customClass="HomeVC" customModule="InstaShopAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bcy-tE-kpq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9r-S9-UoW">
+                                <rect key="frame" x="114" y="521" width="146" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login With Instagram"/>
+                                <connections>
+                                    <action selector="onLoginBtnTap:" destination="QxM-CU-AAb" eventType="touchUpInside" id="yOh-nh-vKm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5OV-KH-07W">
+                                <rect key="frame" x="18" y="145" width="339" height="354"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="h0b-Wg-bPv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Insta Shop" id="8vk-hm-YkR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbZ-KS-V2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1160.8" y="88.605697151424295"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="yck-VF-MHM">
+            <objects>
+                <viewController storyboardIdentifier="InstaWebViewcontroller" id="fNj-E2-1lP" customClass="LoginVC" customModule="InstaShopAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wkt-qh-3Mo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mL3-Fx-ZMd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="By5-rT-LDi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mL3-Fx-ZMd" firstAttribute="bottom" secondItem="jhm-A5-GcL" secondAttribute="bottom" id="8nv-Ya-3ZK"/>
+                            <constraint firstItem="By5-rT-LDi" firstAttribute="leading" secondItem="wkt-qh-3Mo" secondAttribute="leading" id="L2m-B6-Eqg"/>
+                            <constraint firstItem="mL3-Fx-ZMd" firstAttribute="trailing" secondItem="jhm-A5-GcL" secondAttribute="trailing" id="Rd5-zG-69a"/>
+                            <constraint firstItem="mL3-Fx-ZMd" firstAttribute="leading" secondItem="jhm-A5-GcL" secondAttribute="leading" id="TSj-3K-euA"/>
+                            <constraint firstItem="By5-rT-LDi" firstAttribute="top" secondItem="jhm-A5-GcL" secondAttribute="top" id="dwI-W7-IqI"/>
+                            <constraint firstAttribute="trailing" secondItem="By5-rT-LDi" secondAttribute="trailing" id="h9R-XO-veU"/>
+                            <constraint firstItem="mL3-Fx-ZMd" firstAttribute="top" secondItem="wkt-qh-3Mo" secondAttribute="top" id="k5e-IN-fsg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jhm-A5-GcL"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginWebView" destination="mL3-Fx-ZMd" id="ZHE-EQ-Maa"/>
+                        <outlet property="progressView" destination="By5-rT-LDi" id="VRM-lP-1s8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cML-Mg-NgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335.19999999999999" y="88.605697151424295"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="InstaShopAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455.19999999999999" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bzs-bH-WTW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ItV-RE-UY2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sn8-ag-Hl7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QxM-CU-AAb" kind="relationship" relationship="rootViewController" id="kxe-Fn-lTZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RfM-I3-vTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1910" y="89"/>
+        </scene>
+    </scenes>
+</document>
