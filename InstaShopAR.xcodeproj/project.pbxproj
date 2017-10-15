@@ -15,6 +15,7 @@
 		F25346061F8D552B0082FA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25346051F8D552B0082FA16 /* Assets.xcassets */; };
 		F25346091F8D552B0082FA16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25346071F8D552B0082FA16 /* LaunchScreen.storyboard */; };
 		F25346111F8F93CD0082FA16 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25346101F8F93CD0082FA16 /* LoginVC.swift */; };
+		F2A58B521F9324DB009212E3 /* ScanARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58B511F9324DB009212E3 /* ScanARVC.swift */; };
 		F2F04DAC1F912C0800050165 /* PBSocialDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F04DAB1F912C0800050165 /* PBSocialDelegate.swift */; };
 		F2F04DAE1F912CE100050165 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F04DAD1F912CE100050165 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		F25346081F8D552B0082FA16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F253460A1F8D552B0082FA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F25346101F8F93CD0082FA16 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F2A58B511F9324DB009212E3 /* ScanARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanARVC.swift; sourceTree = "<group>"; };
 		F2F04DAB1F912C0800050165 /* PBSocialDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBSocialDelegate.swift; sourceTree = "<group>"; };
 		F2F04DAD1F912CE100050165 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		F7119E0FC52E611DD71EBF9F /* Pods_InstaShopAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaShopAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 			children = (
 				F2F04DAF1F912D0900050165 /* Home */,
 				F25346121F8F93D60082FA16 /* Login */,
+				F2A58B531F9324E7009212E3 /* Scan Screen */,
 				F25345FC1F8D552B0082FA16 /* AppDelegate.swift */,
 				F25345FE1F8D552B0082FA16 /* art.scnassets */,
 				F25346001F8D552B0082FA16 /* ViewController.swift */,
@@ -106,6 +109,14 @@
 				F2F04DAB1F912C0800050165 /* PBSocialDelegate.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F2A58B531F9324E7009212E3 /* Scan Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F2A58B511F9324DB009212E3 /* ScanARVC.swift */,
+			);
+			path = "Scan Screen";
 			sourceTree = "<group>";
 		};
 		F2F04DAF1F912D0900050165 /* Home */ = {
@@ -255,6 +266,7 @@
 				F2F04DAE1F912CE100050165 /* HomeVC.swift in Sources */,
 				F2F04DAC1F912C0800050165 /* PBSocialDelegate.swift in Sources */,
 				F25345FD1F8D552B0082FA16 /* AppDelegate.swift in Sources */,
+				F2A58B521F9324DB009212E3 /* ScanARVC.swift in Sources */,
 				F25346111F8F93CD0082FA16 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

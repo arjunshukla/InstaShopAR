@@ -77,4 +77,27 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+    
+    func addBox1() {
+        let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+        
+        let boxNode = SCNNode()
+        boxNode.geometry = box
+        boxNode.position = SCNVector3(0, 0, -0.2)
+        
+        let scene = SCNScene()
+        scene.rootNode.addChildNode(boxNode)
+        sceneView.scene = scene
+    }
+    
+    func addBox2() {
+        let box = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
+        
+        let boxNode = SCNNode()
+        boxNode.geometry = box
+        boxNode.position = SCNVector3(0, 0, -0.2)
+        
+        sceneView.scene.rootNode.addChildNode(boxNode)
+    }
 }
