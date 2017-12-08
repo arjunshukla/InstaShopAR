@@ -8,4 +8,5 @@ target 'InstaShopAR' do
   # Pods for InstaShopAR
 pod 'InstagramKit', '~> 3.0'
 pod 'Alamofire', '~> 4.5'
+pod 'TGClient', '~> 4.4'
 end

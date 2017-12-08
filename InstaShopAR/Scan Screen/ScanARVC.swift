@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SceneKit
 import ARKit
+import Vision
 
 class ScanARVC: UIViewController, ARSCNViewDelegate {
     
@@ -29,6 +30,9 @@ class ScanARVC: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         //        sceneView.scene = scene
+        
+        let scene = Scene(size: self.view.frame.size)
+//        sceneView.presentScene(scene)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,10 +118,6 @@ class ScanARVC: UIViewController, ARSCNViewDelegate {
         addBox2()
     }
     
-    @IBAction func didTap(_ sender: Any) {
-        print("in didTap")
-    }
-    
     @objc func didTap(withGestureRecognizer recognizer: UIGestureRecognizer) {
         let tapLocation = recognizer.location(in: sceneView)
         let hitTestResults = sceneView.hitTest(tapLocation)
@@ -132,6 +132,14 @@ class ScanARVC: UIViewController, ARSCNViewDelegate {
             
         }
         node.removeFromParentNode()
+    }
+    
+    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
+        // Create and configure a node for the anchor added to the view's session.
+        let labelNode = SKLabelNode(text: "👾")
+        labelNode.horizontalAlignmentMode = .center
+        labelNode.verticalAlignmentMode = .center
+        return labelNode;
     }
 }
 extension float4x4 {
