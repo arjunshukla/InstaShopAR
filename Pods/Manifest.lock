@@ -20,16 +20,19 @@ PODS:
     - InstagramKit/Exclude-UICKeyChainStore (= 3.8)
   - InstagramKit/Exclude-UICKeyChainStore (3.8):
     - AFNetworking (~> 3.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - InstagramKit (~> 3.0)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   InstagramKit: 402d6bba375357b548039de08eea19a1b8716354
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 770a3002d36f0889d0ef35475bea30acde72fd42
+PODFILE CHECKSUM: 45797d008f7dcdc91fec7d544e4e8bec7bfaf95f
 
 COCOAPODS: 1.3.1
