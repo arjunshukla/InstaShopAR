@@ -21,7 +21,8 @@ class ResultDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var tableViewResultData: UITableView!
     
-//    var results: JSON = JSON()
+    @IBOutlet weak var pageControl: UIPageControl!
+    //    var results: JSON = JSON()
     
     var arrResults1 = ["MSGM hot pink suit", "Jimmy Choo", "Mother Jeans"];
     var arrResults2 = ["MSGM hot pink suit", "MSGM pink trousers", "ALC X Nike", "RayBan Sunglasses"];
@@ -33,8 +34,7 @@ class ResultDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     override func viewDidLoad() {
-        self.currentScreen = 0;
-        self.arrCurrentData = self.arrResults1;
+        
         self.imgInfluencerProfilePic.layer.cornerRadius = self.imgInfluencerProfilePic.frame.width/2;
         self.imgInfluencerProfilePic.clipsToBounds = true;
         
@@ -45,6 +45,10 @@ class ResultDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(onLeftSwipe(sender:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.reloadData();
     }
     
     //    MARK: Table view methods
@@ -73,11 +77,13 @@ class ResultDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @objc func onRightSwipe(sender: AnyObject?) {
-        print("Right Swiped!!")
+//        print("Right Swiped!!")
         // move back, decrememt array
         if(self.currentScreen > 0) {
             self.currentScreen -= 1;
-             self.reloadData();
+            self.imgResultImage.rightToLeftAnimation();
+            self.tableViewResultData.rightToLeftAnimation();
+            self.reloadData();
         }
         
         // change screen indicator
@@ -85,10 +91,12 @@ class ResultDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @objc func onLeftSwipe(sender: AnyObject?) {
-        print("Left Swiped!!")
+//        print("Left Swiped!!")
         // move forward, incrememt array
         if(self.currentScreen < 2) {
             self.currentScreen += 1;
+            self.imgResultImage.leftToRightAnimation();
+            self.tableViewResultData.leftToRightAnimation();
             self.reloadData();
         }
         
@@ -113,7 +121,73 @@ class ResultDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             break;
         }
          self.tableViewResultData.reloadData();
-        print("Current screen no \(self.currentScreen)")
+//        print("Current screen no \(self.currentScreen)")
+        
         self.imgResultImage.image = UIImage(named: arrResultImages[self.currentScreen]);
+        
+        self.pageControl.currentPage = self.currentScreen;
+    }
+    
+    
+    @IBAction func onStoreListBtnTap(_ sender: Any) {
+        self.performSegue(withIdentifier: "segueToStoreListScreen", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToStoreListScreen" {
+            
+            let controller = segue.destination as! StoreListVC
+            controller.dictItems = ["items": ["RayBan Sunglasses UX203", "A.L.C X Nike", "MSGM hot pink suit", "Chic Wish Mesh Dress"],
+                                    "images": ["item1", "item2", "item3", "item4"],
+                                    "price": ["$ 153", "$100", "$111", "$59"]];
+        }
+    }
+    
+    
+    //    MARK: Navigation
+    @IBAction func backToResults(segue:UIStoryboardSegue) { }
+    
+    @IBAction func onBackToSearchBtnTap(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToSearchResultVC", sender: self)
+    }
+}
+
+extension UIView {
+    func leftToRightAnimation(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
+        // Create a CATransition object
+        let leftToRightTransition = CATransition()
+        
+        // Set its callback delegate to the completionDelegate that was provided
+        if let delegate: AnyObject = completionDelegate {
+            leftToRightTransition.delegate = delegate as? CAAnimationDelegate
+        }
+        
+        leftToRightTransition.type = kCATransitionPush
+        leftToRightTransition.subtype = kCATransitionFromRight
+        leftToRightTransition.duration = duration
+        leftToRightTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        leftToRightTransition.fillMode = kCAFillModeRemoved
+        
+        // Add the animation to the View's layer
+        self.layer.add(leftToRightTransition, forKey: "leftToRightTransition")
+    }
+    
+    func rightToLeftAnimation(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
+        // Create a CATransition object
+        let rightToLeftTransition = CATransition()
+        
+        // Set its callback delegate to the completionDelegate that was provided
+        if let delegate: AnyObject = completionDelegate {
+            rightToLeftTransition.delegate = delegate as? CAAnimationDelegate
+        }
+        
+        rightToLeftTransition.type = kCATransitionPush
+        rightToLeftTransition.subtype = kCATransitionFromLeft
+        rightToLeftTransition.duration = duration
+        rightToLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        rightToLeftTransition.fillMode = kCAFillModeRemoved
+        
+        // Add the animation to the View's layer
+        self.layer.add(rightToLeftTransition, forKey: "rightToLeftTransition")
     }
 }

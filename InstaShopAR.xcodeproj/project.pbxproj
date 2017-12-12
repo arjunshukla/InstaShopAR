@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E276CB31FDF888700D1B58E /* StoreListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E276CB21FDF888700D1B58E /* StoreListVC.swift */; };
+		7E276CB61FDF8D5800D1B58E /* StoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E276CB51FDF8D5800D1B58E /* StoreDetailsVC.swift */; };
+		7E276CB81FDFAB7300D1B58E /* ScanResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E276CB71FDFAB7300D1B58E /* ScanResultCell.swift */; };
+		7E276CBA1FDFD4E800D1B58E /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E276CB91FDFD4E800D1B58E /* StoreCell.swift */; };
 		7E34B7FC1FB52CFB00B54CC3 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E34B7FB1FB52CE400B54CC3 /* Inceptionv3.mlmodel */; };
 		7E7F46701FDA14EC00DEF640 /* ScanResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F466F1FDA14EC00DEF640 /* ScanResultsVC.swift */; };
 		7E7F46721FDA14FD00DEF640 /* ResultDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F46711FDA14FD00DEF640 /* ResultDetailsVC.swift */; };
@@ -28,6 +32,10 @@
 /* Begin PBXFileReference section */
 		18A57EF18F3D8C8AB4C639F5 /* Pods-InstaShopAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaShopAR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaShopAR/Pods-InstaShopAR.debug.xcconfig"; sourceTree = "<group>"; };
 		2FA84A54E5098AB8344E9C7D /* Pods-InstaShopAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaShopAR.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaShopAR/Pods-InstaShopAR.release.xcconfig"; sourceTree = "<group>"; };
+		7E276CB21FDF888700D1B58E /* StoreListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListVC.swift; sourceTree = "<group>"; };
+		7E276CB51FDF8D5800D1B58E /* StoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailsVC.swift; sourceTree = "<group>"; };
+		7E276CB71FDFAB7300D1B58E /* ScanResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultCell.swift; sourceTree = "<group>"; };
+		7E276CB91FDFD4E800D1B58E /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		7E34B7FB1FB52CE400B54CC3 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = InstaShopAR/Inceptionv3.mlmodel; sourceTree = SOURCE_ROOT; };
 		7E7F466F1FDA14EC00DEF640 /* ScanResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultsVC.swift; sourceTree = "<group>"; };
 		7E7F46711FDA14FD00DEF640 /* ResultDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailsVC.swift; sourceTree = "<group>"; };
@@ -68,10 +76,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E276CB11FDF885F00D1B58E /* Store List Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7E276CB21FDF888700D1B58E /* StoreListVC.swift */,
+				7E276CB91FDFD4E800D1B58E /* StoreCell.swift */,
+			);
+			path = "Store List Screen";
+			sourceTree = "<group>";
+		};
+		7E276CB41FDF8D3600D1B58E /* Store Details Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7E276CB51FDF8D5800D1B58E /* StoreDetailsVC.swift */,
+			);
+			path = "Store Details Screen";
+			sourceTree = "<group>";
+		};
 		7E7F466D1FDA148B00DEF640 /* Scan Result Screen */ = {
 			isa = PBXGroup;
 			children = (
 				7E7F466F1FDA14EC00DEF640 /* ScanResultsVC.swift */,
+				7E276CB71FDFAB7300D1B58E /* ScanResultCell.swift */,
 			);
 			path = "Scan Result Screen";
 			sourceTree = "<group>";
@@ -115,6 +141,8 @@
 		F25345FB1F8D552B0082FA16 /* InstaShopAR */ = {
 			isa = PBXGroup;
 			children = (
+				7E276CB41FDF8D3600D1B58E /* Store Details Screen */,
+				7E276CB11FDF885F00D1B58E /* Store List Screen */,
 				7E7F466E1FDA149E00DEF640 /* Result Details Screen */,
 				7E7F466D1FDA148B00DEF640 /* Scan Result Screen */,
 				F2F04DAF1F912D0900050165 /* Home */,
@@ -296,13 +324,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25346011F8D552B0082FA16 /* ViewController.swift in Sources */,
+				7E276CB81FDFAB7300D1B58E /* ScanResultCell.swift in Sources */,
 				F2F04DAE1F912CE100050165 /* HomeVC.swift in Sources */,
 				F2F04DAC1F912C0800050165 /* PBSocialDelegate.swift in Sources */,
 				F25345FD1F8D552B0082FA16 /* AppDelegate.swift in Sources */,
 				F2EE42971FA8DFD700E020B8 /* Scene.swift in Sources */,
 				7E7F46741FDA175F00DEF640 /* ResultDetailCell.swift in Sources */,
 				7E7F46701FDA14EC00DEF640 /* ScanResultsVC.swift in Sources */,
+				7E276CB31FDF888700D1B58E /* StoreListVC.swift in Sources */,
 				7E7F46721FDA14FD00DEF640 /* ResultDetailsVC.swift in Sources */,
+				7E276CB61FDF8D5800D1B58E /* StoreDetailsVC.swift in Sources */,
+				7E276CBA1FDFD4E800D1B58E /* StoreCell.swift in Sources */,
 				7E34B7FC1FB52CFB00B54CC3 /* Inceptionv3.mlmodel in Sources */,
 				F2A58B521F9324DB009212E3 /* ScanARVC.swift in Sources */,
 				F25346111F8F93CD0082FA16 /* LoginVC.swift in Sources */,
