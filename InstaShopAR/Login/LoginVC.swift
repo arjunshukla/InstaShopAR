@@ -155,7 +155,10 @@ class LoginVC: UIViewController, WKNavigationDelegate, WKScriptMessageHandler, P
                                             if pbSocialDelegate != nil
                                             {
                                                 pbSocialDelegate.getInstagramLoginResponse(userData : result)
-                                                self.navigationController?.popViewController(animated: true)
+//                                                self.navigationController?.popViewController(animated: true)
+                                                let scanScreen = self.storyboard?.instantiateViewController(withIdentifier: "scanARVC") as! ScanARVC
+                                                
+                                                self.navigationController?.present(scanScreen, animated: true)
                                             }
                                         }
                                     }
